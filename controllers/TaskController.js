@@ -144,7 +144,7 @@ exports.createTask = async (req, res) => {
   const body = req.body;
 
   const last_task = tasks[tasks.length - 1];
-  const new_id = last_task.id + 1;
+  const new_id = last_task ? last_task.id + 1 : 1;
 
   const new_task = {
     id: new_id,
