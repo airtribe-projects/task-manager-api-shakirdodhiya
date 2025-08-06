@@ -8,6 +8,7 @@ tap.test("POST /tasks", async (t) => {
     title: "New Task",
     description: "New Task Description",
     completed: false,
+    priority : 'low'
   };
   const response = await server.post("/tasks").send(newTask);
   t.equal(response.status, 201);
@@ -61,6 +62,7 @@ tap.test("PUT /tasks/:id", async (t) => {
     title: "Updated Task",
     description: "Updated Task Description",
     completed: true,
+    priority : 'medium'
   };
   const response = await server.put("/tasks/1").send(updatedTask);
   t.equal(response.status, 200);
